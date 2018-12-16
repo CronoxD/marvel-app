@@ -1,0 +1,17 @@
+
+<div class="shadow p-5 mb-5 bg-white rounded info-content">
+  <app-loading *ngIf="loading" class="info-loading"></app-loading>
+  <div class="d-flex justify-content-around ">
+    <a *ngFor="let item of items" class="mx-1 shadow animated" [routerLink]="['/'+query,item.id]">
+      <img class="w-100" [src]="item.thumbnail | imagem" alt="noimage"/>
+      <div *ngIf="item.title; else name" class="info-link"> {{item.title}} </div>
+      <ng-template #name>
+        <div class="info-link">
+          {{item.name}}
+        </div>
+      </ng-template>
+    </a>
+    <span (click)="getData(1)" *ngIf="total-offset > limit" class="icon-right-open icon-open"></span>
+    <span (click)="getData(-1)" *ngIf="offset != 0 && total > limit" class="icon-left-open icon-open"></span>
+  </div>
+</div>

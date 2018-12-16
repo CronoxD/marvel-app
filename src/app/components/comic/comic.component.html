@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-4">
+    <img class="w-100 img-thumbnail" [src]="comic.thumbnail | imagem" [alt]="comic.title"/>
+  </div>
+  <div class="col-md-8">
+    <h1 class="text-center">{{comic.title}}</h1>
+    <p *ngIf="!comic.description">No description available</p>
+    <p>{{comic.description}}</p>
+  </div>
+  <div class="col-12">
+      <h3>Characters</h3>
+      <hr>
+      <app-loading *ngIf="loading"></app-loading>
+      <app-info-heroe
+        [item] = "'comics'"
+        [query]="'characters'"
+        *ngIf="comic.characters.available > 0 && !loading"
+      > </app-info-heroe>
+      
+      <!-- <h3>Series</h3>
+      <hr>
+      <app-loading *ngIf="loading"></app-loading>
+      <app-info-heroe [query]="'series'" *ngIf="comic.series.available > 0 && !loading"></app-info-heroe> -->
+    </div>
+</div>

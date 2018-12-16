@@ -1,0 +1,36 @@
+.icon-right-open {   
+    right: 0;  
+}
+
+.icon-left-open {
+    left: 0;
+}
+
+.icon-open {
+    top: 50%;
+    position: absolute;
+    cursor: pointer;
+    background: rgba(128, 128, 128,0.5);
+    border-radius: 50%;
+    height: 40px;
+    padding: 10px;
+}
+
+.info-content {
+    position: relative;
+}
+
+.info-loading{
+    position: absolute;
+    color: #1CAF99;
+    top: 140px;
+    left: 0;
+    right: 0;
+}
+
+.info-link {
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(44, 43, 43);
+}

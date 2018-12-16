@@ -1,0 +1,21 @@
+<h2 class="text-center my-3">Random Comics</h2>
+
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngFor="let comic of comics" class="card mb-3">
+  <img class="card-img-top" [src]="comic.thumbnail | imagem" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{comic.title}}</h5>
+    <p class="card-text">
+      {{comic.description}}
+    </p>
+    <p class="card-text">
+        <span *ngIf="comic.characters.available > 0" class="badge badge-primary mx-1">Characters: {{comic.characters.available}}</span>
+        <span *ngIf="comic.creators.available > 0" class="badge badge-primary">Creators: {{comic.creators.available}}</span>
+        <span *ngIf="comic.stories.available > 0" class="badge badge-primary mx-1">Stories: {{comic.stories.available}}</span>
+    </p>
+    <p class="card-text text-center">
+      <button [routerLink]="['/comics', comic.id]" class="btn btn-outline-primary">See more</button>
+    </p>
+  </div>
+</div>

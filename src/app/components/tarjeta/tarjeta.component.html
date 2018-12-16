@@ -1,0 +1,21 @@
+<div class="card-columns">
+  <div *ngFor="let item of items" class="card p-3">
+    <img class="card-img-top" [src]="item.thumbnail | imagem" [alt]="item.name">
+    <div class="card-body">
+      <h5 class="card-title">{{item.name}}</h5>
+      <p class="card-text">
+        <span *ngIf="item.comics.available > 0" class="badge badge-primary mx-1">Comics: {{item.comics.available}}</span>
+        <span *ngIf="item.series.available > 0" class="badge badge-primary">Series: {{item.series.available}}</span>
+        <span *ngIf="item.stories.available > 0" class="badge badge-primary mx-1">Stories: {{item.stories.available}}</span>        
+      </p>
+      <hr *ngIf="item.description.length > 0" >
+      <p *ngIf="item.description.length > 0" class="card-text">
+        {{item.description}}
+      </p>
+      <p *ngIf="item.description.length < 1" class="card-text">
+        No description available
+      </p>
+    </div>
+    <a [routerLink]="['/characters', item.id]" class="btn btn-outline-primary btn-block">See more...</a>
+  </div>
+</div>
