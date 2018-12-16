@@ -5,11 +5,14 @@ And using de [Marvel API](https://developer.marvel.com/)
 
 You can see the result here: [Marvel App](https://cronoxd.github.io/marvel-app/characters)
 
-If you want to try the project you need to get an api key from the developer Marvel page.
+## How to do a request in a development environment with Angular?
 
-## How to do a request in JavaScript with Angular? (There are better ways. but this is the simplest to me).
+If you want to try the project you need to get an api key from the developer Marvel web site
+and modify the file servicios/home.service.ts with your credentials.
 
-```javascript
+There are better ways. but this is the simplest to me.
+
+```typescript
 import { HttpClient, HttpParams } from '@angular/common/http';
 ...
 constructor(private http:HttpClient) { }
@@ -42,10 +45,6 @@ getQuery( query:string, limit:number = 15, offset:number = 600, search:string=nu
     }
 ...
 ```
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Deploy Angular Project to GitHub Pages
 
